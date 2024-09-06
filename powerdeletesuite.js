@@ -447,9 +447,12 @@ var pd = {
       const rateLimitRemaining = parseInt(xhr.getResponseHeader('x-ratelimit-remaining'), 10);
       const rateLimitReset = parseInt(xhr.getResponseHeader('x-ratelimit-reset'), 10);
       // Determine timeout
-      let timeout = 3000; // default timeout
+      let timeout;
       if (rateLimitRemaining <= 3) {
         timeout = (rateLimitReset + 1) * 1000;
+      } else {
+        // Randomize timeout between 1 to 5 seconds 
+        timeout = Math.floor(Math.random() * 4000) + 1000; 
       }
       return timeout;
     },
