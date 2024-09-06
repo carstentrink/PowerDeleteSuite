@@ -20,7 +20,7 @@ javascript: (function() {
         alert('Error retrieving PowerDeleteSuite from GitHub');
       });
   } else if (confirm('This script can only be run from your own user profile on Reddit. Would you like to go there now?')) {
-    document.location = 'https://old.reddit.com/u/me/overview';
+    document.location = 'https://old.reddit.com/user/me/overview';
   } else {
     alert('Please go to your Reddit profile before running this script');
   }
