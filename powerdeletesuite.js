@@ -41,7 +41,7 @@ var pd = {
             "This script can only be run from your own user profile on reddit. Would you like to go there now?"
           )
         ) {
-          document.location = "https://old.reddit.com/u/me/overview";
+          document.location = "https://old.reddit.com/user/me/overview";
         }
       }
     }
