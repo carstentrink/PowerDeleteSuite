@@ -1,23 +1,22 @@
-javascript: (function () {
+javascript: (function() {
   window.bookmarkver = "1.4";
   var isReddit =
     document.location.hostname.split(".").slice(-2).join(".") === "reddit.com";
-  var isOverview = document.location.href.match(/\/overview\b/);
+  var isOverview = document.location.href.match(/\/user\b/);
   if (isReddit && isOverview) {
     var cachBustUrl = `?${new Date().getDate()}`;
-    var cachBustUrl = 'https://raw.githubusercontent.com/j0be/PowerDeleteSuite/master/powerdeletesuite.js?' + (new Date().getDate());
-    // var cachBustUrl = "https://raw.githubusercontent.com/saandman/PowerDeleteSuite/master/powerdeletesuite.js?" + (new Date().getDate());
+    var cachBustUrl = 'https://raw.githubusercontent.com/braboobssiere/PowerDeleteSuite_copy/master/powerdeletesuite.js?' + (new Date().getDate());
     fetch(cachBustUrl)
-      .then(function (response) {
+      .then(function(response) {
         return response.text();
       })
-      .then(function (data) {
+      .then(function(data) {
         var script = document.createElement("script");
         script.id = "pd-script";
         script.innerHTML = data;
         document.getElementsByTagName("head")[0].appendChild(script);
       })
-      .catch(function () {
+      .catch(function() {
         alert("Error retrieving PowerDeleteSuite from github");
       });
   } else if (
