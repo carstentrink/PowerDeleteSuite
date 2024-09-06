@@ -21,7 +21,7 @@
 
 ## Screenshots
  
- ![Power Delete Suite Control Center](http://i.imgur.com/Fh5HsAD.png)
+ ![Power Delete Suite Control Center](https://raw.githubusercontent.com/braboobssiere/PowerDeleteSuite_copy/master/ControlCenter.png)
  
 ## Installation
 
