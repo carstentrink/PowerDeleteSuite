@@ -448,11 +448,11 @@ var pd = {
       const rateLimitReset = parseInt(xhr.getResponseHeader('x-ratelimit-reset'), 10);
       // Determine timeout
       let timeout;
-      if (rateLimitRemaining <= 3) {
+      if (rateLimitRemaining <= 2) {
         timeout = (rateLimitReset + 1) * 1000;
       } else {
-        // Randomize timeout between 1 to 5 seconds 
-        timeout = Math.floor(Math.random() * 4000) + 1000; 
+        // Randomize timeout between 1.5 to 3 seconds 
+        timeout = Math.floor(Math.random() * 1500) + 1500; 
       }
       return timeout;
     },
