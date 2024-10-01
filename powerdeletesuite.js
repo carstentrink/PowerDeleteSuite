@@ -575,28 +575,33 @@ var pd = {
               }
             }
           },
-    function(xhr) { 
-      pd.task.info.errors++;
+function(xhr) { 
+  pd.task.info.errors++;
 
-      // Get timeout using the helper function
-      const timeout = pd.helpers.getRateLimitTimeout(xhr);
+  // Get timeout using the helper function
+  const timeout = pd.helpers.getRateLimitTimeout(xhr);
 
-      // Set timeout for the error handling
-      setTimeout(() => {
-        if (
-          confirm(
-            "Error getting " +
-            pd.task.paths.sections[0] +
-            " page. Would you like to retry?"
-          )
-        ) {
-          pd.actions.page.handle();
-        } else {
-          pd.actions.page.shift();
-          pd.actions.page.next();
-        }
-      }, timeout); 
+  // Set timeout for the error handling
+  setTimeout(() => {
+    // Commented out the user confirmation dialog
+    /*
+    if (
+      confirm(
+        "Error getting " +
+        pd.task.paths.sections[0] +
+        " page. Would you like to retry?"
+      )
+    ) {
+      pd.actions.page.handle();
+    } else {
+      pd.actions.page.shift();
+      pd.actions.page.next();
     }
+    */
+    // Automatically retry the action without user confirmation
+    pd.actions.page.handle();
+  }, timeout); 
+}
   );
 },
     },
