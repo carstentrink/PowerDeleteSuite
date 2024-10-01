@@ -575,23 +575,30 @@ var pd = {
               }
             }
           },
-          function() {
-            pd.task.info.errors++;
-            if (
-              confirm(
-                "Error getting " +
-                pd.task.paths.sections[0] +
-                " page. Would you like to retry?"
-              )
-            ) {
-              pd.actions.page.handle();
-            } else {
-              pd.actions.page.shift();
-              pd.actions.page.next();
-            }
-          }
-        );
-      },
+    function(xhr) { 
+      pd.task.info.errors++;
+
+      // Get timeout using the helper function
+      const timeout = pd.helpers.getRateLimitTimeout(xhr);
+
+      // Set timeout for the error handling
+      setTimeout(() => {
+        if (
+          confirm(
+            "Error getting " +
+            pd.task.paths.sections[0] +
+            " page. Would you like to retry?"
+          )
+        ) {
+          pd.actions.page.handle();
+        } else {
+          pd.actions.page.shift();
+          pd.actions.page.next();
+        }
+      }, timeout); 
+    }
+  );
+},
     },
     children: {
       handleGroup: function() {
