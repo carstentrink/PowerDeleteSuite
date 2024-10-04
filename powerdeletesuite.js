@@ -2,24 +2,14 @@ var pd = {
   version: "1.4.12",
   bookmarkver: "1.4",
   table: [
-    // Adjective
-    ['delicious', 'spicy', 'sweet', 'savory', 'refreshing', 'hearty', 'tasty', 'zesty', 'creamy', 'crunchy'],
-    // Noun (Food Item)
-    ['sushi', 'pizza', 'pasta', 'tacos', 'salad', 'burger', 'cake', 'ice cream', 'curry', 'sandwich'],
-    // Verb (Action)
-    ['cooked', 'baked', 'grilled', 'prepared', 'savored', 'tasted', 'mixed', 'chopped', 'served', 'enjoyed'],
-    // Preposition
-    ['in', 'at', 'on', 'inside', 'visit', 'near', 'for', 'alongside', 'through', 'between'],
-    // Noun (Place - Setting)
-    ['the kitchen', 'a restaurant', 'a cafe', 'the garden', 'a barbecue', 'a food truck', 'a bakery', 'the dining room', 'the patio', 'the picnic table'],
-    // Preposition
-    ['as', 'when', 'since', 'until', 'before', 'after', 'alongside', 'during the time', 'throughout', 'in the course of'],
-    // Verb (Action)
-    ['trying', 'exploring', 'learning', 'creating', 'experimenting', 'sharing', 'enjoying', 'discovering', 'documenting', 'photographing'],
-    // Adjective
-    ['new', 'exciting', 'traditional', 'unique', 'classic', 'healthy', 'gourmet', 'simple', 'quick', 'homemade'],
-    // Noun (Food Challenge)
-    ['recipes', 'dishes', 'flavors', 'ingredients', 'cuisines', 'meals', 'snacks', 'treats', 'drinks', 'desserts']
+  ['I', 'We', 'They', 'She', 'He', 'Us'],
+  ['love', 'enjoy', 'like', 'prefer', 'appreciate', 'taste'],
+  ['sushi', 'pizza', 'salad', 'ice cream', 'pasta', 'tacos'],
+  ['with coffee', 'with tea', 'with wine', 'with juice', 'with beer', 'with soda'],
+  ['while cooking', 'while baking', 'while gardening', 'while painting', 'while hiking', 'while reading'],
+  ['in the evening', 'on weekends', 'during the week', 'in the summer', 'in the winter', 'at night'],
+  ['to relax', 'for fun', 'to learn', 'to explore', 'to socialize', 'to unwind'],
+  ['with friends', 'alone', 'at home', 'in a class', 'at the park', 'at a restaurant']
   ],
 
   generateRandomSentence: function() {
