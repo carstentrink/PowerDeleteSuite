@@ -1,7 +1,7 @@
 var pd = {
   version: "1.4.12",
   bookmarkver: "1.4",
-  table: [
+  words: [
   ['I', 'We', 'They', 'She', 'He', 'Us'],
   ['love', 'enjoy', 'like', 'prefer', 'appreciate', 'taste'],
   ['sushi', 'pizza', 'salad', 'ice cream', 'pasta', 'tacos'],
@@ -13,9 +13,17 @@ var pd = {
   ],
 
   generateRandomSentence: function() {
-    var sentence = this.table.map(row => row[Math.floor(Math.random() * row.length)]).join(' ');
+    // Function to generate a random integer between min (inclusive) and max (inclusive)
+    function getRandomInt(min, max) {
+        const range = max - min + 1;
+        const array = new Uint32Array(1);
+        window.crypto.getRandomValues(array);
+        return min + (array[0] % range);
+    }
+
+    var sentence = this.words.map(row => row[getRandomInt(0, row.length - 1)]).join(' ');
     return sentence.charAt(0).toUpperCase() + sentence.slice(1) + '.';
-  },
+},
 
   init: function() {
     pd.checks.versions();
