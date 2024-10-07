@@ -13,7 +13,6 @@ var pd = {
   ],
 
   generateRandomSentence: function() {
-    // Function to generate a random integer between min (inclusive) and max (inclusive)
     function getRandomInt(min, max) {
         const range = max - min + 1;
         const array = new Uint32Array(1);
