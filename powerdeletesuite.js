@@ -448,8 +448,8 @@ var pd = {
       if (rateLimitRemaining <= 2) {
         timeout = (rateLimitReset + 1) * 1000;
       } else {
-        // Randomize timeout between 1.5 to 3 seconds 
-        timeout = Math.floor(Math.random() * 1500) + 1500; 
+        // Randomize timeout between 10 to 20 seconds 
+        timeout = Math.floor(Math.random() * 10000) + 10000; 
       }
       return timeout;
     },
